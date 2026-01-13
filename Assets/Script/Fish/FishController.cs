@@ -15,32 +15,35 @@ public class FishController : MonoBehaviour
     [SerializeField]
     private float _rotationTorque = 10f;
 
+    private KeyCode? lastBendKey = null;
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A)) lastBendKey = KeyCode.A;
+        if (Input.GetKeyDown(KeyCode.D)) lastBendKey = KeyCode.D;
+        float bendTarget = 0f;
+
+        if (lastBendKey != null && !Input.GetKey(lastBendKey.Value))
         {
-            SetTarget(-_targetBendValue);
-        }else 
-        if (Input.GetKey(KeyCode.D))
-        {
-            SetTarget(_targetBendValue);
-        }else
-        {
-            SetTarget(0);
+            lastBendKey =
+                Input.GetKey(KeyCode.A) ? KeyCode.A :
+                Input.GetKey(KeyCode.D) ? KeyCode.D :
+                null;
         }
 
-        var torque = 0f;
+        if (lastBendKey == KeyCode.A && Input.GetKey(KeyCode.A))
+            bendTarget = -_targetBendValue;
+        else if (lastBendKey == KeyCode.D && Input.GetKey(KeyCode.D))
+            bendTarget = _targetBendValue;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            torque = _rotationTorque;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            torque = -_rotationTorque;
-        }
+        SetTarget(bendTarget);
 
-        if(GetAverageRotationSpeed(_rigidBodies) < _maxRotationSpeed)
+        float torque =
+            Input.GetKey(KeyCode.LeftArrow) ? _rotationTorque :
+            Input.GetKey(KeyCode.RightArrow) ? -_rotationTorque :
+            0f;
+
+        if (torque != 0f &&
+            GetAverageRotationSpeed(_rigidBodies) < _maxRotationSpeed)
         {
             RotateChainAroundCG(_rigidBodies, Vector3.forward, torque);
         }
