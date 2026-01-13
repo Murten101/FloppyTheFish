@@ -14,8 +14,16 @@ public class FishController : MonoBehaviour
     private float _maxRotationSpeed = 10f;
     [SerializeField]
     private float _rotationTorque = 10f;
+    [SerializeField]
+    private float _bendStrength = 100f;
 
     private KeyCode? lastBendKey = null;
+
+    private void Start()
+    {
+        SetSpringStrength(_bendStrength);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A)) lastBendKey = KeyCode.A;
@@ -47,6 +55,10 @@ public class FishController : MonoBehaviour
         {
             RotateChainAroundCG(_rigidBodies, Vector3.forward, torque);
         }
+
+#if UNITY_EDITOR
+        SetSpringStrength(_bendStrength);
+#endif
     }
 
     void SetTarget(float value)
@@ -62,6 +74,20 @@ public class FishController : MonoBehaviour
             hinge.useSpring = true;
         }
     }
+
+    void SetSpringStrength(float value)
+    {
+        foreach (HingeJoint hinge in _hingeJoints)
+        {
+            if (hinge == null) continue;
+
+            JointSpring spring = hinge.spring;
+            spring.spring = value;
+            hinge.spring = spring;
+            hinge.useSpring = true;
+        }
+    }
+
     Vector3 ComputeCenterOfMass(List<Rigidbody> bodies)
     {
         Vector3 com = Vector3.zero;
