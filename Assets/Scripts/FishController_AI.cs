@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FishController : MonoBehaviour
+public class FishController_AI : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 5f;
