@@ -336,7 +336,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 74428031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cafbbecbe08f6f49b2cba0dda9a1103, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cbd07fbb1099fc4a9404e28bdb25bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hingeJoints:
@@ -348,9 +348,8 @@ MonoBehaviour:
   - {fileID: 1361089891}
   - {fileID: 1526311489}
   - {fileID: 1159374002}
-  _targetBendValue: 70
-  _maxRotationSpeed: 25
-  _rotationTorque: 0.5
+  _targetBendValue: 45
+  _rotationTorque: 10
 --- !u!1 &106334015
 GameObject:
   m_ObjectHideFlags: 0
