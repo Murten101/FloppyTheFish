@@ -349,6 +349,7 @@ MonoBehaviour:
   - {fileID: 1526311489}
   - {fileID: 1159374002}
   _targetBendValue: 70
+  _maxRotationSpeed: 25
   _rotationTorque: 0.5
 --- !u!1 &106334015
 GameObject:

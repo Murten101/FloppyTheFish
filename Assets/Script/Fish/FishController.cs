@@ -11,34 +11,54 @@ public class FishController : MonoBehaviour
     [SerializeField]
     private float _targetBendValue = 45f;
     [SerializeField]
+    private float _maxRotationSpeed = 10f;
+    [SerializeField]
     private float _rotationTorque = 10f;
+    [SerializeField]
+    private float _bendStrength = 100f;
+
+    private KeyCode? lastBendKey = null;
+
+    private void Start()
+    {
+        SetSpringStrength(_bendStrength);
+    }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A)) lastBendKey = KeyCode.A;
+        if (Input.GetKeyDown(KeyCode.D)) lastBendKey = KeyCode.D;
+        float bendTarget = 0f;
+
+        if (lastBendKey != null && !Input.GetKey(lastBendKey.Value))
         {
-            SetTarget(-_targetBendValue);
-        }else 
-        if (Input.GetKey(KeyCode.D))
-        {
-            SetTarget(_targetBendValue);
-        }else
-        {
-            SetTarget(0);
+            lastBendKey =
+                Input.GetKey(KeyCode.A) ? KeyCode.A :
+                Input.GetKey(KeyCode.D) ? KeyCode.D :
+                null;
         }
 
-        var torque = 0f;
+        if (lastBendKey == KeyCode.A && Input.GetKey(KeyCode.A))
+            bendTarget = -_targetBendValue;
+        else if (lastBendKey == KeyCode.D && Input.GetKey(KeyCode.D))
+            bendTarget = _targetBendValue;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        SetTarget(bendTarget);
+
+        float torque =
+            Input.GetKey(KeyCode.LeftArrow) ? _rotationTorque :
+            Input.GetKey(KeyCode.RightArrow) ? -_rotationTorque :
+            0f;
+
+        if (torque != 0f &&
+            GetAverageRotationSpeed(_rigidBodies) < _maxRotationSpeed)
         {
-            torque = _rotationTorque;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            torque = -_rotationTorque;
+            RotateChainAroundCG(_rigidBodies, Vector3.forward, torque);
         }
 
-        RotateChainAroundCG(_rigidBodies, Vector3.forward, torque);
+#if UNITY_EDITOR
+        SetSpringStrength(_bendStrength);
+#endif
     }
 
     void SetTarget(float value)
@@ -54,6 +74,20 @@ public class FishController : MonoBehaviour
             hinge.useSpring = true;
         }
     }
+
+    void SetSpringStrength(float value)
+    {
+        foreach (HingeJoint hinge in _hingeJoints)
+        {
+            if (hinge == null) continue;
+
+            JointSpring spring = hinge.spring;
+            spring.spring = value;
+            hinge.spring = spring;
+            hinge.useSpring = true;
+        }
+    }
+
     Vector3 ComputeCenterOfMass(List<Rigidbody> bodies)
     {
         Vector3 com = Vector3.zero;
@@ -67,6 +101,26 @@ public class FishController : MonoBehaviour
 
         return com / totalMass;
     }
+
+    float GetAverageRotationSpeed(List<Rigidbody> bodies)
+    {
+        if (bodies == null || bodies.Count == 0)
+            return 0f;
+
+        float total = 0f;
+        int count = 0;
+
+        foreach (var rb in bodies)
+        {
+            if (!rb) continue;
+
+            total += rb.angularVelocity.magnitude;
+            count++;
+        }
+
+        return count > 0 ? total / count : 0f;
+    }
+
 
     void RotateChainAroundCG(List<Rigidbody> bodies, Vector3 rotationAxis, float torqueStrength)
     {
