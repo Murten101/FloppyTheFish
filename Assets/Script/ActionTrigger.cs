@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriggerUi : MonoBehaviour
+public class ActionTrigger : MonoBehaviour
 {
     [SerializeField]
     private GameObject TargetUi;
