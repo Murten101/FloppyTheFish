@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/_ImportedAssets.meta
-guid: 46625943e993bbe41b45fae41adeb9c7
-========
-guid: 756eced5dec1b214ab1326d14e5c7b2b
->>>>>>>> origin/main:Assets/Script/Camera.meta
+guid: 37ff482bc074c3c4d9ac1b4b4326b386
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

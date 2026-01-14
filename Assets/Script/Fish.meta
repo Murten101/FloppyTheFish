@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs.meta
-guid: c9e676eaf9845d04b89ac2495987bd66
-========
-guid: b93ef34dcb34a5f4eb97d4a6244ce376
->>>>>>>> origin/main:Assets/Script/Fish.meta
+guid: 2198a893cc91ae3498cad16cda5d1b9c
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
