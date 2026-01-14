@@ -11,6 +11,8 @@ public class FishController : MonoBehaviour
     [SerializeField]
     private float _targetBendValue = 45f;
     [SerializeField]
+    private float _maxRotationSpeed = 10f;
+    [SerializeField]
     private float _rotationTorque = 10f;
 
     void Update()
@@ -38,7 +40,10 @@ public class FishController : MonoBehaviour
             torque = -_rotationTorque;
         }
 
-        RotateChainAroundCG(_rigidBodies, Vector3.forward, torque);
+        if(GetAverageRotationSpeed(_rigidBodies) < _maxRotationSpeed)
+        {
+            RotateChainAroundCG(_rigidBodies, Vector3.forward, torque);
+        }
     }
 
     void SetTarget(float value)
@@ -67,6 +72,26 @@ public class FishController : MonoBehaviour
 
         return com / totalMass;
     }
+
+    float GetAverageRotationSpeed(List<Rigidbody> bodies)
+    {
+        if (bodies == null || bodies.Count == 0)
+            return 0f;
+
+        float total = 0f;
+        int count = 0;
+
+        foreach (var rb in bodies)
+        {
+            if (!rb) continue;
+
+            total += rb.angularVelocity.magnitude;
+            count++;
+        }
+
+        return count > 0 ? total / count : 0f;
+    }
+
 
     void RotateChainAroundCG(List<Rigidbody> bodies, Vector3 rotationAxis, float torqueStrength)
     {
