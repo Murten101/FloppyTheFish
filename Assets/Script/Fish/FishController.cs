@@ -29,10 +29,6 @@ public class FishController : MonoBehaviour
         SetSpringStrength(_bendStrength);
     }
 
-    //Q-W tail
-    //O-P head
-    //E-I spin
-
     void Update()
     {
         CheckBendHead();
