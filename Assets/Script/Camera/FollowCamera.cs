@@ -11,6 +11,7 @@ public class FollowCamera : MonoBehaviour
 
         Vector3 pos = transform.position;
         pos.x = Mathf.Lerp(pos.x, target.position.x, smoothSpeed * Time.deltaTime);
+        pos.y = Mathf.Lerp(pos.y, target.position.y, smoothSpeed * Time.deltaTime);
         transform.position = pos;
     }
 }
