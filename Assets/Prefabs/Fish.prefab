@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 8560690148205922284}
   m_Layer: 0
   m_Name: LowerMiddle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 1954065183430308694}
   m_Layer: 0
   m_Name: LowerMiddlePart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 1612699223500380370}
   m_Layer: 0
   m_Name: TailPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 3469978810554203361}
   m_Layer: 0
   m_Name: HeadPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 3683641780976203257}
   m_Layer: 0
   m_Name: TailPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 8163577735777945341}
   m_Layer: 0
   m_Name: HeadPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 8584124800867455225}
   m_Layer: 0
   m_Name: TailPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 7191413757189662577}
   m_Layer: 0
   m_Name: HeadPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 792679084169234792}
   m_Layer: 0
   m_Name: HeadPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 8090610064932886132}
   m_Layer: 0
   m_Name: Middle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 2635980516350673278}
   m_Layer: 0
   m_Name: Tail
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 2462993883851909631}
   m_Layer: 0
   m_Name: MiddlePart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 5899274362345746775}
   m_Layer: 0
   m_Name: LowerMiddlePart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 2890190900914812422}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1568,7 +1568,7 @@ GameObject:
   - component: {fileID: 1958489498240491478}
   m_Layer: 0
   m_Name: LowerMiddlePart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 3333956978184409575}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1690,10 +1690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbd07fbb1099fc4a9404e28bdb25bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hingeJoints:
-  - {fileID: 2890190900914812422}
-  - {fileID: 8090610064932886132}
-  - {fileID: 8560690148205922284}
+  _hingeJointsHead: []
+  _hingeJointsTail: []
   _rigidBodies:
   - {fileID: 6852417863497049041}
   - {fileID: 1096493202381405070}
@@ -1703,3 +1701,9 @@ MonoBehaviour:
   _maxRotationSpeed: 10
   _rotationTorque: 10
   _bendStrength: 100
+  _tailUp: 113
+  _tailDown: 119
+  _headUp: 111
+  _headDown: 112
+  _spinLeft: 101
+  _spinRight: 105
