@@ -321,6 +321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 895659453}
   - {fileID: 106334018}
   - {fileID: 1361089892}
   - {fileID: 1526311490}
@@ -339,8 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cafbbecbe08f6f49b2cba0dda9a1103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hingeJoints:
+  _hingeJointsHead:
   - {fileID: 106334016}
+  _hingeJointsTail:
   - {fileID: 1361089893}
   - {fileID: 1526311491}
   _rigidBodies:
@@ -351,6 +353,13 @@ MonoBehaviour:
   _targetBendValue: 70
   _maxRotationSpeed: 25
   _rotationTorque: 0.5
+  _bendStrength: 100
+  _tailUp: 113
+  _tailDown: 119
+  _headUp: 111
+  _headDown: 112
+  _spinLeft: 101
+  _spinRight: 105
 --- !u!1 &106334015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1718,7 @@ GameObject:
   - component: {fileID: 895659450}
   - component: {fileID: 895659454}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: LiveFishReaction
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1826,12 +1835,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895659449}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -5}
+  m_LocalRotation: {x: 0, y: -0, z: -0.58086264, w: 0.81400156}
+  m_LocalPosition: {x: -0.26966858, y: -0.43969908, z: -5.0051003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 74428032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &895659454
 MonoBehaviour:
@@ -3912,7 +3921,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 895659453}
   - {fileID: 675381154}
   - {fileID: 2088328015}
   - {fileID: 74428032}
