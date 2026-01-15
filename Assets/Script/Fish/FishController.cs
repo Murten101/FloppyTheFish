@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class FishController : MonoBehaviour
 {
@@ -20,10 +21,13 @@ public class FishController : MonoBehaviour
     private float _bendStrength = 100f;
 
     [SerializeField]
-    private KeyCode _tailUp = KeyCode.Q, _tailDown = KeyCode.W, _headUp = KeyCode.O, _headDown = KeyCode.P, _spinLeft = KeyCode.E, _spinRight = KeyCode.I;
+    private KeyCode _tailUp = KeyCode.Q, _tailDown = KeyCode.W, _headUp = KeyCode.O, _headDown = KeyCode.P, _spinLeft = KeyCode.E, _spinRight = KeyCode.I, _menuToggle = KeyCode.Escape;
 
     private KeyCode? _lastTailBendKey = null;
     private KeyCode? _lastHeadBendKey = null;
+    
+    private bool isMenuToggled = false;
+
     private void Start()
     {
         SetSpringStrength(_bendStrength);
@@ -31,6 +35,9 @@ public class FishController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(_menuToggle)) isMenuToggled = !isMenuToggled;         
+        if (isMenuToggled) return;
+
         CheckBendHead();
         CheckBendTail();
         float torque =
