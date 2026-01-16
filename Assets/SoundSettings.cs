@@ -9,12 +9,12 @@ public class SoundSettings : MonoBehaviour
 
     private void Start()
     {
-        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 100));
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
     }
 
     public void SetVolume(float value)
     {
-        if (value < 1)
+        if (value <= 1)
         {
             value = 0.01f;
         }

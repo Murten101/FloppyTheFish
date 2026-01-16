@@ -24,6 +24,9 @@ public class FishController : MonoBehaviour
 
     private KeyCode? _lastTailBendKey = null;
     private KeyCode? _lastHeadBendKey = null;
+    
+    public bool isMenuToggled = false;
+
     private void Start()
     {
         SetSpringStrength(_bendStrength);
@@ -31,6 +34,8 @@ public class FishController : MonoBehaviour
 
     void Update()
     {
+        if (isMenuToggled) return;
+
         CheckBendHead();
         CheckBendTail();
         float torque =
