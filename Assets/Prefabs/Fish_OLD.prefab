@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8560690148205922284}
   m_Layer: 0
   m_Name: LowerMiddle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 3339318121698531214}
   m_Layer: 0
   m_Name: LowerMiddlePart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 3469978810554203361}
   m_Layer: 0
   m_Name: HeadPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 8584124800867455225}
   m_Layer: 0
   m_Name: TailPart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 2890190900914812422}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1684,8 +1684,8 @@ GameObject:
   - component: {fileID: 3422598090566729570}
   - component: {fileID: 3333956978184409575}
   m_Layer: 0
-  m_Name: Fish 1
-  m_TagString: Untagged
+  m_Name: Fish_OLD
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
