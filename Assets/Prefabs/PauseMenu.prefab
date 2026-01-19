@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3724915006249028774}
   - component: {fileID: 8893564612078053248}
   m_Layer: 5
-  m_Name: PauseMenu (Don't forget to re add the ui menu)
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 3371111806610735811}
   - component: {fileID: 6935616783386330292}
   m_Layer: 5
-  m_Name: Controls
+  m_Name: Controls UI Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 1117372858037360132}
   - component: {fileID: 3837268208870906639}
   m_Layer: 5
-  m_Name: empty
+  m_Name: Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
