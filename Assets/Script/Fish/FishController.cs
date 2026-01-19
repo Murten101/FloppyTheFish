@@ -194,7 +194,7 @@ public class FishController : MonoBehaviour
                 continue;
 
             Vector3 torque = rotationAxis.normalized * torqueStrength;
-            rb.AddTorque(torque, ForceMode.Force);
+            rb.AddTorque(torque * Time.fixedDeltaTime);
         }
     }
 }
