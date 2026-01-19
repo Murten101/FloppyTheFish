@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Basket : MonoBehaviour
 {
@@ -11,34 +12,35 @@ public class Basket : MonoBehaviour
     private int timeSinceLast = 0;
     private Vector3 neutralPos;
 
+    private Rigidbody rb;
+
     void Start()
     {
-        neutralPos = transform.position;
+        rb = GetComponent<Rigidbody>();
+        neutralPos = rb.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if ( isFrying )
         {
-            transform.position = Vector3.MoveTowards(transform.position, (neutralPos-Vector3.up*maxLow), sinkSpeed);
+            rb.position = Vector3.MoveTowards(transform.position, (neutralPos-Vector3.up*maxLow), sinkSpeed);
             if ( timeSinceLast != 0 && (int)Time.realtimeSinceStartup > timeSinceLast+sinkDelay ) 
                 isFrying = false;
 
-        }else if ( transform.position != neutralPos  )
+        }else if ( rb.position != neutralPos  )
         {
-            transform.position = Vector3.MoveTowards(transform.position, neutralPos, sinkSpeed);
+            rb.position = Vector3.MoveTowards(rb.position, neutralPos, sinkSpeed);
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         isFrying = true;
-        // collision.gameObject.transform.SetParent(transform);
     }
 
     void OnCollisionExit(Collision collision)
     {
         timeSinceLast = (int)Time.realtimeSinceStartup;
-        // collision.gameObject.transform.SetParent(transform.parent);
     }
 }
