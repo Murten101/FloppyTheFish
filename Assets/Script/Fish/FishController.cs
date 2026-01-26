@@ -44,12 +44,17 @@ public class FishController : MonoBehaviour
         if (!playedBrace && 
             (Input.GetKeyDown(_spinLeft) || 
             Input.GetKeyDown(_spinRight)))
-            {
+        {
                 audioTrigger.PlayBrace();
                 playedBrace = true;
-            } else if ( !(Input.GetKeyDown(_spinLeft) || 
-                        Input.GetKeyDown(_spinRight)))
+
+        } else if ( playedBrace && 
+                    !(Input.GetKeyDown(_spinLeft) ||
+                    Input.GetKeyDown(_spinRight)))
+        {
                 playedBrace = false;
+                audioTrigger.PlayExhale();
+        }
 
         CheckBendHead();
         CheckBendTail();
