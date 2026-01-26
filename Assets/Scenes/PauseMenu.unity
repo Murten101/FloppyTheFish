@@ -4042,6 +4042,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2048122637, guid: 1750c5475c8113b4da3c073ca363e093, type: 3}
+    - target: {fileID: 900360403303174864, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1224640135925886738, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -4049,6 +4053,30 @@ PrefabInstance:
     - target: {fileID: 1529911450989534464, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: scenetoload
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491548732848193347, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491548732848193347, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491548732848193347, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491548732848193347, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491548732848193347, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012140327672137295, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5176471
       objectReference: {fileID: 0}
     - target: {fileID: 4381365815798758892, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_AnchorMax.x
