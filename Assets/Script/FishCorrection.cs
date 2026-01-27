@@ -35,7 +35,7 @@ public class FishCorrection : MonoBehaviour
         if (currentFishPos > correctionRef.transform.position.x+maxWidth ||
             currentFishPos < correctionRef.transform.position.x-maxWidth)
         {
-            Vector3 adjustmentForce = Vector3.left * (correctionRef.transform.position.x - currentFishPos); 
+            Vector3 adjustmentForce = Vector3.forward * (correctionRef.transform.position.x - currentFishPos); 
             Debug.Log(adjustmentForce);
 
             fishRbs[0].AddRelativeForce(adjustmentForce,ForceMode.Impulse);
