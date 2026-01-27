@@ -18,6 +18,9 @@ public class AudioTrigger : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField]
+    private AudioSource bgAudio;
+
+    [SerializeField]
     private int tauntTriggerDistance, milestoneTriggerDistance; 
 
     void Start()
@@ -79,5 +82,24 @@ public class AudioTrigger : MonoBehaviour
     public void PlayFlop()
     {
         PlayRandom(flopAudio);
+    }
+
+    public void SetVolume()
+    {
+        bgAudio.volume = audioSource.volume = PlayerPrefs.GetFloat("SavedMasterVolume", 50);
+    }
+
+    public void TogglePause(bool isPaused)
+    {       
+        if (isPaused)
+        {
+            audioSource.Pause();
+            bgAudio.Pause();
+        } else if ( !audioSource.isPlaying || !bgAudio.isPlaying )
+        {
+            audioSource.UnPause();
+            bgAudio.UnPause();
+        }
+
     }
 }
