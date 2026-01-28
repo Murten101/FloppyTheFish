@@ -10,6 +10,8 @@ public class SoundSettings : MonoBehaviour
     [SerializeField]
     AudioTrigger audioTrigger;
 
+    private bool runOnce = true;
+
     private void Start()
     {
         SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
@@ -17,6 +19,11 @@ public class SoundSettings : MonoBehaviour
 
     public void SetVolume(float value)
     {
+        if (runOnce)
+        {
+            value = 50;
+            runOnce = false;
+        }
 
         RefreshSlider(value);
         PlayerPrefs.SetFloat("SavedMasterVolume", value/100);

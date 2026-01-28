@@ -15,10 +15,10 @@ public class AudioTrigger : MonoBehaviour
     private AudioResource sizzelAudio;
 
     [SerializeField]
-    private AudioSource audioSource;
+    private AudioSource audioSource, bgAudio, effortAudio;
 
     [SerializeField]
-    private AudioSource bgAudio;
+    private bool funnyFilters = false;
 
     [SerializeField]
     private int tauntTriggerDistance, milestoneTriggerDistance; 
@@ -34,13 +34,13 @@ public class AudioTrigger : MonoBehaviour
         if (player.transform.position.x < (prevPlayerPos.x - milestoneTriggerDistance))
         {
             prevPlayerPos = player.transform.position;
-            PlayRandom(milestoneAudio);            
+            PlayRandom(milestoneAudio, true);            
         }
 
         if (player.transform.position.x > (prevPlayerPos.x + tauntTriggerDistance))
         {
             prevPlayerPos = player.transform.position;
-            PlayRandom(tauntAudio);
+            PlayRandom(tauntAudio, true);
         }
 
         if ( audioSource.resource != null && !audioSource.isPlaying)
@@ -48,13 +48,21 @@ public class AudioTrigger : MonoBehaviour
             audioSource.resource = null;
             audioSource.pitch = 1;
         }
+
+        if ( !effortAudio.isPlaying && !funnyFilters)
+            audioSource.pitch = 1;
     }
 
     private void PlayRandom(AudioResource[] targetSoundArray)
     {
-        // Debug.Log(prevPlayerPos +" : "+ Random.Range(0,(targetSoundArray.Length-1)));
         audioSource.resource = targetSoundArray[Random.Range(0,(targetSoundArray.Length-1))];
         audioSource.Play();
+    }
+
+    private void PlayRandom(AudioResource[] targetSoundArray, bool altChannel)
+    {
+        effortAudio.resource = targetSoundArray[Random.Range(0,(targetSoundArray.Length-1))];
+        effortAudio.Play();
     }
 
     public void PlaySizzle()
@@ -71,12 +79,18 @@ public class AudioTrigger : MonoBehaviour
 
     public void PlayBrace()
     {
-        PlayRandom(braceAudio);
+        if (funnyFilters)
+            effortAudio.pitch = Random.Range(0.5f,1.5f);
+
+        PlayRandom(braceAudio, true);
     }
 
     public void PlayExhale()
     {
-        PlayRandom(exhaleAudio);
+        if (funnyFilters)
+            effortAudio.pitch = Random.Range(0.5f,1.5f);
+
+        PlayRandom(exhaleAudio, true);
     }
 
     public void PlayFlop()
@@ -86,7 +100,7 @@ public class AudioTrigger : MonoBehaviour
 
     public void SetVolume()
     {
-        bgAudio.volume = audioSource.volume = PlayerPrefs.GetFloat("SavedMasterVolume", 50);
+        effortAudio.volume = bgAudio.volume = audioSource.volume = PlayerPrefs.GetFloat("SavedMasterVolume", 50);
     }
 
     public void TogglePause(bool isPaused)
@@ -95,11 +109,18 @@ public class AudioTrigger : MonoBehaviour
         {
             audioSource.Pause();
             bgAudio.Pause();
+            effortAudio.Pause();
         } else if ( !audioSource.isPlaying || !bgAudio.isPlaying )
         {
             audioSource.UnPause();
             bgAudio.UnPause();
+            effortAudio.UnPause();
         }
 
+    }
+
+    public void ToggleFunnySounds()
+    {
+        funnyFilters = !funnyFilters;
     }
 }

@@ -56,6 +56,10 @@ public class FishController : MonoBehaviour
                 audioTrigger.PlayExhale();
         }
 
+        if ( Input.GetKeyUp(_tailUp) || Input.GetKeyUp(_tailDown) ||
+             Input.GetKeyUp(_headUp) || Input.GetKeyUp(_headDown))
+            audioTrigger.PlayFlop();
+
         CheckBendHead();
         CheckBendTail();
         float torque =
