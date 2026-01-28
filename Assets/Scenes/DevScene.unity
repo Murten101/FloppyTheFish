@@ -2866,13 +2866,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 3112403939192637625, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 1224640135925886738, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3112403939192637625, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112403939192637625, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4416145597084599675, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_Pivot.x
@@ -2956,15 +2960,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450718221195234647, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 4450718221195234647, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4450718221195234647, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5863769029042470666, guid: 194cbd106847fb843a8b1a8fb1b417e2, type: 3}
       propertyPath: m_Sprite
