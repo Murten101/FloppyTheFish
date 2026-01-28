@@ -7,11 +7,6 @@ public class SoundSettings : MonoBehaviour
     [SerializeField] Slider soundSlider;
     [SerializeField] AudioMixer masterMixer;
 
-    [SerializeField]
-    AudioTrigger audioTrigger;
-
-    private bool runOnce = true;
-
     private void Start()
     {
         SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
@@ -19,21 +14,19 @@ public class SoundSettings : MonoBehaviour
 
     public void SetVolume(float value)
     {
-        if (runOnce)
+        if (value <= 1)
         {
-            value = 50;
-            runOnce = false;
+            value = 0.01f;
         }
 
         RefreshSlider(value);
-        PlayerPrefs.SetFloat("SavedMasterVolume", value/100);
+        PlayerPrefs.SetFloat("SavedMasterVolume", value);
         masterMixer.SetFloat("MasterVolume", Mathf.Log10(value / 100) * 20);
     }
 
     public void SetVolumeFromSlider()
     {
         SetVolume(soundSlider.value);
-        audioTrigger.SetVolume();
     }
 
     public void RefreshSlider(float value)
