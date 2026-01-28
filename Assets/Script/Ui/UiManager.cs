@@ -10,9 +10,6 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private FishController player;
 
-    [SerializeField]
-    private AudioTrigger audioTrigger;
-
     public bool isDead = false;
 
     public bool isPaused = false;
@@ -30,7 +27,6 @@ public class UiManager : MonoBehaviour
             player.isMenuToggled = isPaused = !isPaused;
             Time.timeScale = isPaused ? 0 : 1;
 
-            audioTrigger.TogglePause(isPaused);
             if (isPaused) SwitchUi(menuUi.name);
             if (!isPaused) SwitchUi(defaultUi.name);
         }
