@@ -22,6 +22,11 @@ public class FishController : MonoBehaviour
     [SerializeField]
     private KeyCode _tailUp = KeyCode.Q, _tailDown = KeyCode.W, _headUp = KeyCode.O, _headDown = KeyCode.P, _spinLeft = KeyCode.E, _spinRight = KeyCode.I;
 
+    private bool playedBrace;
+
+    [SerializeField]
+    private AudioTrigger audioTrigger; 
+
     private KeyCode? _lastTailBendKey = null;
     private KeyCode? _lastHeadBendKey = null;
     
@@ -35,6 +40,25 @@ public class FishController : MonoBehaviour
     void Update()
     {
         if (isMenuToggled) return;
+
+        if (!playedBrace && 
+            (Input.GetKeyDown(_spinLeft) || 
+            Input.GetKeyDown(_spinRight)))
+        {
+                audioTrigger.PlayBrace();
+                playedBrace = true;
+
+        } else if ( playedBrace && 
+                    (Input.GetKeyUp(_spinLeft) ||
+                    Input.GetKeyUp(_spinRight)))
+        {
+                playedBrace = false;
+                audioTrigger.PlayExhale();
+        }
+
+        if ( Input.GetKeyUp(_tailUp) || Input.GetKeyUp(_tailDown) ||
+             Input.GetKeyUp(_headUp) || Input.GetKeyUp(_headDown))
+            audioTrigger.PlayFlop();
 
         CheckBendHead();
         CheckBendTail();
