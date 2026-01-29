@@ -9,13 +9,13 @@ public class AudioTrigger : MonoBehaviour
     private Vector3 prevPlayerPos;
 
     [SerializeField]
-    private AudioResource[] tauntAudio, milestoneAudio, braceAudio, exhaleAudio, flopAudio, squelchAudio;
+    private AudioResource[] tauntAudio, milestoneAudio, braceAudio, holdAudio, exhaleAudio, flopAudio, squelchAudio;
 
     [SerializeField]
     private AudioResource sizzelAudio;
 
     [SerializeField]
-    private AudioSource audioSource, bgAudio, effortAudio;
+    private AudioSource audioSource, bgAudio, effortAudio, holdSource;
 
     [SerializeField]
     private bool funnyFilters = false;
@@ -83,6 +83,14 @@ public class AudioTrigger : MonoBehaviour
             effortAudio.pitch = Random.Range(0.5f,1.5f);
 
         PlayRandom(braceAudio, true);
+    }
+
+    public void PlayHold()
+    {
+        if (funnyFilters)
+            holdSource.pitch = Random.Range(0.5f,1.5f);
+
+        PlayRandom(holdAudio, true);
     }
 
     public void PlayExhale()
