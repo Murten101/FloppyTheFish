@@ -10,23 +10,25 @@ public class SoundSettings : MonoBehaviour
     [SerializeField]
     AudioTrigger audioTrigger;
 
-    private bool runOnce = true;
+    private bool isRanOnce = true;
 
     private void Start()
     {
+        //Debug.Log(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
+
         SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
     }
 
     public void SetVolume(float value)
     {
-        if (runOnce)
+        if (isRanOnce)
         {
             value = 50;
-            runOnce = false;
+            isRanOnce = false;
         }
 
         RefreshSlider(value);
-        PlayerPrefs.SetFloat("SavedMasterVolume", value/100);
+        PlayerPrefs.SetFloat("SavedMasterVolume", value / 100);
         masterMixer.SetFloat("MasterVolume", Mathf.Log10(value / 100) * 20);
     }
 
