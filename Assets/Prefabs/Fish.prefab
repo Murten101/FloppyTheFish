@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3567801140476249070}
   - component: {fileID: 7879858774240200025}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RootCamFollow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 3800369117552112741}
   - component: {fileID: 8879810659473447027}
   - component: {fileID: 1069135655337301334}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FinTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 4091212416347349113}
   - component: {fileID: 943050621455754396}
   - component: {fileID: 8753963994061637144}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FinBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8407883021831003586}
   - component: {fileID: 8412109934935090249}
   - component: {fileID: 9208711715099513945}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3387916833389843621}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 4074186258014428099}
   - component: {fileID: 4581937788202018432}
   - component: {fileID: 7759423398539463172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 1561408393149451748}
   - component: {fileID: 5632423339258940133}
   - component: {fileID: 9121323035396818315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LowerMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 8553898240472742591}
   - component: {fileID: 4772385739023136382}
   - component: {fileID: 8580353122768399631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 5971936136034839836}
   - component: {fileID: 2192032523154352762}
   - component: {fileID: 1198806659374894923}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LiveFishReaction
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5519667641526576794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
