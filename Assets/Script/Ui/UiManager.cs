@@ -25,7 +25,7 @@ public class UiManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             player.isMenuToggled = isPaused = !isPaused;
-            Time.timeScale = isPaused ? 0 : 1;
+            //Time.timeScale = isPaused ? 0 : 1;
 
             if (isPaused) SwitchUi(menuUi.name);
             if (!isPaused) SwitchUi(defaultUi.name);
