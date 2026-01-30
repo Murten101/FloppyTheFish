@@ -68,7 +68,7 @@ public class AudioTrigger : MonoBehaviour
     public void PlaySizzle()
     {
         audioSource.resource = sizzelAudio;
-        audioSource.pitch = Random.Range(0.5f,1.5f);
+        audioSource.pitch = Random.Range(0.8f,1.5f);
         audioSource.Play();
     }
 
@@ -80,7 +80,7 @@ public class AudioTrigger : MonoBehaviour
     public void PlayBrace()
     {
         if (funnyFilters)
-            effortAudio.pitch = Random.Range(0.5f,1.5f);
+            effortAudio.pitch = Random.Range(0.8f,1.5f);
 
         PlayRandom(braceAudio, true);
     }
@@ -88,7 +88,7 @@ public class AudioTrigger : MonoBehaviour
     public void PlayHold()
     {
         if (funnyFilters)
-            holdSource.pitch = Random.Range(0.5f,1.5f);
+            holdSource.pitch = Random.Range(0.8f,1.5f);
 
         PlayRandom(holdAudio, true);
     }
@@ -96,7 +96,7 @@ public class AudioTrigger : MonoBehaviour
     public void PlayExhale()
     {
         if (funnyFilters)
-            effortAudio.pitch = Random.Range(0.5f,1.5f);
+            effortAudio.pitch = Random.Range(0.8f,1.5f);
 
         PlayRandom(exhaleAudio, true);
     }

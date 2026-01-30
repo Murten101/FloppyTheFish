@@ -21,11 +21,11 @@ public class SoundSettings : MonoBehaviour
 
     public void SetVolume(float value)
     {
-        if (isRanOnce)
-        {
-            value = 50;
-            isRanOnce = false;
-        }
+        //if (isRanOnce)
+        //{
+        //    value = 50;
+        //    isRanOnce = false;
+        //}
 
         RefreshSlider(value);
         PlayerPrefs.SetFloat("SavedMasterVolume", value / 100);
