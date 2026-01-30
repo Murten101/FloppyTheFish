@@ -16,7 +16,7 @@ public class SoundSettings : MonoBehaviour
     {
         //Debug.Log(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
 
-        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 100));
     }
 
     public void SetVolume(float value)

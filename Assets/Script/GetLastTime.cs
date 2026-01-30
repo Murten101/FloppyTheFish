@@ -9,6 +9,6 @@ public class GetLastTime : MonoBehaviour
     {
         var time = PlayerPrefs.GetFloat(GameTimer.LastRunTimeKey, -1);
         var timeString = time == -1 ? "-" : time.ToString();
-        _targetText.text = $"Last: {timeString}";
+        _targetText.text = $"This run: {timeString} seconds";
     }
 }

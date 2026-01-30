@@ -1035,27 +1035,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5476468272786437445, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5476468272786437445, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5476468272786437445, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 6554154319074570411, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 6554154319074570411, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8582665328064978441, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
       propertyPath: m_Name
       value: Sound Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582665328064978441, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1067,55 +1071,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 203676005616378326, guid: 2765a25408e6bb346a6d3b523e039a1d, type: 3}
   m_PrefabInstance: {fileID: 1183806015}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1330499134
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1330499136}
-  - component: {fileID: 1330499135}
-  m_Layer: 0
-  m_Name: PostProcessing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1330499135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330499134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 2221276e794341a48a58031af83af7c5, type: 2}
---- !u!4 &1330499136
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330499134}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 480.2589, y: 157.77046, z: -1.1608887}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488090248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,7 +1785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version 1.0.0
+  m_text: 'Version 1.0.1
 
 '
   m_isRightToLeft: 0
@@ -2192,15 +2147,15 @@ RectTransform:
   m_GameObject: {fileID: 2011395252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1646649904}
   m_Father: {fileID: 561189413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -8, y: -169}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -250, y: -200}
   m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011395254
@@ -2441,4 +2396,3 @@ SceneRoots:
   - {fileID: 2027061801}
   - {fileID: 633345975}
   - {fileID: 1663438921}
-  - {fileID: 1330499136}

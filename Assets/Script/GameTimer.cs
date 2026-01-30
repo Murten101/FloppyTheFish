@@ -1,6 +1,7 @@
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
@@ -28,6 +29,6 @@ public class GameTimer : MonoBehaviour
         {
             PlayerPrefs.SetFloat(FastestRunTimeKey, runTime);
         }
-
+        SceneManager.LoadScene(2);
     }
 }
