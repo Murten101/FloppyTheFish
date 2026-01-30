@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DevScene.unity
     guid: ae0ec0b752372e6aba933d7625a75586
-  - enabled: 0
-    path: Assets/Scenes/PauseMenu.unity
-    guid: c55f89b735fd3e7499f051238c8be282
+  - enabled: 1
+    path: Assets/Scenes/Scoreboard.unity
+    guid: 88d1ae7591e9a6346acc3249bf87838d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
